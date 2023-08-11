@@ -1,52 +1,17 @@
-# Задача 1
-import argparse
-# Создайте функцию, которая запрашивает числовые данные от
-# пользователя до тех пор, пока он не введёт целое или
-# вещественное число.
-# Обрабатывайте не числовые данные как исключения.
 
-import logging
+import task1
+import task2
 
-logging.basicConfig(filename="my_log.log", filemode='w', encoding='utf-8', level=logging.INFO)
-logger = logging.getLogger(__name__)
+print(task1.get_digit())
 
+# Введите целое число: q
+# Введите целое или вещественное число!
+# Введите целое число: 1
+# 1.0
 
-def get_digit():
-    while True:
-        num = input('Введите целое число: ')
-        try:
-            num = float(num)
-            logger.info('Использовано значение ' + str(num))
-            return num
-        except:
-            logger.error('Пользователем введено не целое или не вещественное число!')
-            print('Введите целое или вещественное число!')
+dict1 = {1:7,5:4,8:1}
+print(task2.myGet(dict1, 5, 0))
+print(task2.myGet(dict1, 15, 0))
 
-
-print(get_digit())
-
-
-# Задача 2
-
-# Создайте функцию аналог get для словаря.
-# Помимо самого словаря функция принимает ключ и
-# значение по умолчанию.
-# При обращении к несуществующему ключу функция должна
-# возвращать дефолтное значение.
-# Реализуйте работу через обработку исключений.
-
-def myGet(dict, key, defaultValue):
-    try:
-        value = dict[key]
-        logger.info('Использовано значение ' + str(value))
-    except:
-        value = defaultValue
-        logger.error('Использовано значение по умолчанию')
-    return value
-
-
-dict1 = {1: 7, 5: 4, 8: 1}
-
-print(myGet(dict1, 5, 0))
-print(myGet(dict1, 15, 0))
-
+# 4
+# 0
