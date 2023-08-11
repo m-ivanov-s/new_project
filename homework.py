@@ -7,7 +7,7 @@ import argparse
 
 import logging
 
-logging.basicConfig(filename="my_log.log", filemode='w', encoding='utf-8', level=logging.ERROR)
+logging.basicConfig(filename="my_log.log", filemode='w', encoding='utf-8', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -16,6 +16,7 @@ def get_digit():
         num = input('Введите целое число: ')
         try:
             num = float(num)
+            logger.info('Использовано значение ' + str(num))
             return num
         except:
             logger.error('Пользователем введено не целое или не вещественное число!')
@@ -37,6 +38,7 @@ print(get_digit())
 def myGet(dict, key, defaultValue):
     try:
         value = dict[key]
+        logger.info('Использовано значение ' + str(value))
     except:
         value = defaultValue
         logger.error('Использовано значение по умолчанию')
