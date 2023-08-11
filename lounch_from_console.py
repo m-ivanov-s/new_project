@@ -10,4 +10,4 @@ print(task2.myGet(dict1, first, second))
 # python .\lounch_from_console.py 5 0
 
 # output
-# 0
+# 4

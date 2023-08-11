@@ -11,11 +11,9 @@ from log import get_logger
 
 def myGet(dict, key, defaultValue):
     try:
-        value = dict[key]
+        value = dict[int(key)]
         get_logger().info('Использовано значение ' + str(value))
     except:
         value = defaultValue
         get_logger().error('Использовано значение по умолчанию')
     return value
-
-
